@@ -2,9 +2,10 @@ import gspread
 import logging
 
 
-gp = gspread.service_account(filename='/Users/antonponomarev/PycharmProjects/city_drive/services/kingdom.json')
-# gp = gspread.service_account(filename='kingdom.json')
-gsheet = gp.open('График_copy')
+gp = gspread.service_account(filename='services/keys.json')
+# gp = gspread.service_account(filename='keys.json')
+# gsheet = gp.open('График_copy')
+gsheet = gp.open('График')
 sheet = gsheet.worksheet("Лист1")
 
 
