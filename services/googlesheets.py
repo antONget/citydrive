@@ -3,9 +3,9 @@ import logging
 
 
 gp = gspread.service_account(filename='services/keys.json')
-# gp = gspread.service_account(filename='keys.json')
+# gp = gspread.service_account(filename='test_keys.json')
 # gsheet = gp.open('График_copy')
-gsheet = gp.open('График')
+gsheet = gp.open('График ')
 sheet = gsheet.worksheet("Лист1")
 
 
