@@ -2,8 +2,8 @@ import gspread
 import logging
 
 
-# gp = gspread.service_account(filename='services/keys.json')
-gp = gspread.service_account(filename='keys.json')
+gp = gspread.service_account(filename='services/keys.json')
+# gp = gspread.service_account(filename='keys.json')
 gsheet = gp.open('График для бота')
 sheet = gsheet.worksheet("Лист1")
 
