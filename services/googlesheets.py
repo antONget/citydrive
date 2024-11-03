@@ -2,10 +2,9 @@ import gspread
 import logging
 
 
-gp = gspread.service_account(filename='services/keys.json')
-# gp = gspread.service_account(filename='test_keys.json')
-# gsheet = gp.open('График_copy')
-gsheet = gp.open('График ')
+# gp = gspread.service_account(filename='services/keys.json')
+gp = gspread.service_account(filename='keys.json')
+gsheet = gp.open('График для бота')
 sheet = gsheet.worksheet("Лист1")
 
 
@@ -306,4 +305,5 @@ def get_dict_working_shift(date: str) -> dict:
 
 
 if __name__ == '__main__':
-    get_list_working_shift()
+    d = get_dict_working_shift(date='03.11.2024')
+    print(d)
