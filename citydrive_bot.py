@@ -33,7 +33,7 @@ async def main():
     scheduler = AsyncIOScheduler(timezone="Europe/Moscow")
 
     # каждый день
-    scheduler.add_job(parsing_google_sheets_day, 'cron', hour=10, minute=27, args=(bot,))
+    scheduler.add_job(parsing_google_sheets_day, 'cron', hour=10, minute=30, args=(bot,))
     scheduler.add_job(parsing_google_sheets_night, 'cron', hour=21, minute=50, args=(bot,))
     scheduler.start()
 
