@@ -78,3 +78,6 @@ async def parsing_google_sheets_night(bot: Bot):
         await bot.send_message(chat_id=config.tg_bot.channel_id,
                                text=text_send_2,
                                parse_mode='html')
+
+if __name__ == '__main__':
+    pass
