@@ -10,18 +10,27 @@ sheet = gsheet.worksheet("Лист1")
 
 def get_dict_working_shift(date: str) -> dict:
     """
-    Получаем список пользователей работающих в заданный день date
+    Получаем словарь пользователей работающих в заданный день date
     :param date: дата в формате хх.хх.хххх
     :return: dict
     """
     logging.info(f'get_list_working_shift')
+    # получаем все данные в таблице
     values = sheet.get_all_values()
+    # получаем первую строку
     first_row = values[0]
+    # получаем номер столбца соответствующий искомой дате
     index_date = first_row.index(date)
+    # объявляем словарь для помещения в него данных о работниках
     dict_working_shift = {}
+    # проходим по строкам начиная со второй строчки, исключаем строку с датами
+    post = ''
     for i, row in enumerate(values[1:]):
+        # если первая ячейка строки не пустая
         if row[0] != '':
+            # получаем должность работника
             post = row[0]
+            # создаем ключ в словаре
             dict_working_shift[post] = {}
         if row[1] != '':
             dict_working_shift[post][row[1]] = row[index_date]

@@ -1,6 +1,6 @@
 from aiogram import Bot
 from services.googlesheets import get_dict_working_shift
-from datetime import datetime
+from datetime import datetime, timedelta
 from config_data.config import Config, load_config
 
 config: Config = load_config()
